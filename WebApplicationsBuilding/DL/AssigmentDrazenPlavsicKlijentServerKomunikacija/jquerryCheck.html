@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Info</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        form {
+            width: 80%;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        #student-info {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Student Info</h1>
+    <div id="student-info"></div>
+    <form id="get-student-form">
+        <label for="index">Enter Index to Get Student Info:</label>
+        <input type="text" id="index" name="index">
+        <input type="submit" value="Get Student Info">
+    </form>
+    <hr>
+    <form id="add-student-form">
+        <label for="index">Index:</label>
+        <input type="text" id="add-index" name="index"><br><br>
+        <label for="name">Name:</label>
+        <input type="text" id="add-name" name="name"><br><br>
+        <label for="surname">Surname:</label>
+        <input type="text" id="add-surname" name="surname"><br><br>
+        <label for="average-grade">Average Grade:</label>
+        <input type="text" id="add-average-grade" name="average-grade"><br><br>
+        <input type="submit" value="Add Student">
+    </form>
+
+    <script>
+        $(document).ready(function(){
+            $('#get-student-form').submit(function(e){
+                e.preventDefault();
+                var index = $('#index').val();
+                $.ajax({
+                    url: 'http://127.0.0.1:8080/student?index=' + index,
+                    type: 'GET',
+                    success: function(response){
+                        $('#student-info').html(JSON.stringify(response));
+                        console.log(response);
+                    },
+                    error: function(xhr, status, error){
+                        $('#student-info').html('Error: ' + error);
+                        console.log('Error: ' + error);
+                    }
+                });
+            });
+
+            $('#add-student-form').submit(function(e){
+                e.preventDefault();
+                var formData = {
+                    index: $('#add-index').val(),
+                    name: $('#add-name').val(),
+                    surname: $('#add-surname').val(),
+                    average_grade: $('#add-average-grade').val()
+                };
+                $.ajax({
+                    url: 'http://127.0.0.1:8080/',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(formData),
+                    success: function(response){
+                        alert(response.message);
+                        console.log(response);
+                    },
+                    error: function(xhr, status, error){
+                        alert('Error: ' + error);
+                        console.log('Error: ' + error);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

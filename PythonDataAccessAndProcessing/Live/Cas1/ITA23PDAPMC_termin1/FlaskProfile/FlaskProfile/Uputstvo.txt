@@ -1,0 +1,5 @@
+https://www.geeksforgeeks.org/profile-application-using-python-flask-and-mysql/?ref=lbp
+
+pip install flask
+
+pip install flask-mysqldb

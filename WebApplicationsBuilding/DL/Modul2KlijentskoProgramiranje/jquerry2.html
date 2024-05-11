@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery - AJAX GET method</title>
+</head>
+<body>
+  <div>
+    <label>Name:</label>
+    <input id="name">
+    <button onclick="checkForName()">Check</button>
+    <br>
+    <p id="response"></p>
+  </div>
+  <!-- Include full version of jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+ 
+  <script>
+   function checkForName() {
+    var name = $('#name').val();
+        $.get("http://127.0.0.1:8080/?name=" + name, function (data) {
+            $("#response").text(data);
+            }).fail(function(err){
+            $("#response").text(err.responseText);
+            });
+    }
+</script>
+</body>
+</html>

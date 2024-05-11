@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery - AJAX POST method</title>
+</head>
+<body>
+  <div>
+    <label>Name:</label>
+    <input id="name">
+    <br>
+    <label>Surname:</label>
+    <input id="surname">
+    <br>
+    <button onclick="addNew()">Submit</button>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+  <script>
+    function addNew() {
+      var name = $('#name').val();
+      var surname = $('#surname').val();
+
+      // Send data as an object
+      $.ajax({
+        type: "POST",
+        url: "http://127.0.0.1:8080/",
+        data: { name: name, last_name: surname },
+        success: function(data) {
+          console.log(data);
+        },
+        error: function(xhr, status, error) {
+          console.error(xhr.responseText);
+        }
+      });
+    }
+  </script>
+</body>
+</html>

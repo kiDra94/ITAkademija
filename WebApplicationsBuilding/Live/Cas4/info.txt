@@ -1,0 +1,1 @@
+static; templates; vsearch.log; hello.py; pom.py; vsearch.py -> prekopirano od porslog cassa!

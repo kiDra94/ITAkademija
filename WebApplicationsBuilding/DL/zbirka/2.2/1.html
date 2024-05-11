@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <style>
+        .p1style {
+            color: blue;
+        }
+        
+        .p2style {
+            color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+    <p id="prvi_paragraf">Ovo je prvi paragraf</p>
+    <p id="drugi_paragraf">Ovo je drugi paragraf</p>
+    <button onclick="clickFunction()">Change</button>
+    <script>
+        function clickFunction() {
+            document.getElementById("prvi_paragraf").className = "p1style";
+            document.getElementById("prvi_paragraf").innerHTML = "Ovo je drugi paragraf";
+            document.getElementById("drugi_paragraf").className = "p2style";
+            document.getElementById("drugi_paragraf").innerHTML = "Ovo je prvi paragraf";
+        }
+    </script>
+</body>
+
+</html>

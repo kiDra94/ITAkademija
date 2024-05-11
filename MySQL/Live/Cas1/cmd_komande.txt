@@ -1,0 +1,167 @@
+C:\Users\OEM>"C:\Program Files\MySQL\MySQL Server 8.0\bin"
+Der Befehl ""C:\Program Files\MySQL\MySQL Server 8.0\bin"" ist entweder falsch geschrieben oder
+konnte nicht gefunden werden.
+
+C:\Users\OEM>cd "C:\Program Files\MySQL\MySQL Server 8.0\bin"
+
+C:\Program Files\MySQL\MySQL Server 8.0\bin>mysql -u root -p
+Enter password: ***********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 19
+Server version: 8.0.36 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases
+    -> ; (sve sa --> obrisati; ja dodao!!!)
++--------------------+
+| Database           |
++--------------------+
+| information_schema | --> prve tri su ugradjene
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| world              |
++--------------------+
+6 rows in set (0.00 sec)
+
+mysql>  use world --> koristimo ovu bazu podataka
+Database changed
+mysql> show tables; --> izlista sve tabele koje ima
++-----------------+
+| Tables_in_world |
++-----------------+
+| city            |
+| country         |
+| countrylanguage |
++-----------------+
+3 rows in set (0.01 sec)
+
+mysql> use information_schema
+Database changed
+mysql> show tables;
++---------------------------------------+
+| Tables_in_information_schema          |
++---------------------------------------+
+| ADMINISTRABLE_ROLE_AUTHORIZATIONS     |
+| APPLICABLE_ROLES                      |
+| CHARACTER_SETS                        |
+| CHECK_CONSTRAINTS                     |
+| COLLATION_CHARACTER_SET_APPLICABILITY |
+| COLLATIONS                            |
+| COLUMN_PRIVILEGES                     |
+| COLUMN_STATISTICS                     |
+| COLUMNS                               |
+| COLUMNS_EXTENSIONS                    |
+| ENABLED_ROLES                         |
+| ENGINES                               |
+| EVENTS                                |
+| FILES                                 |
+| INNODB_BUFFER_PAGE                    |
+| INNODB_BUFFER_PAGE_LRU                |
+| INNODB_BUFFER_POOL_STATS              |
+| INNODB_CACHED_INDEXES                 |
+| INNODB_CMP                            |
+| INNODB_CMP_PER_INDEX                  |
+| INNODB_CMP_PER_INDEX_RESET            |
+| INNODB_CMP_RESET                      |
+| INNODB_CMPMEM                         |
+| INNODB_CMPMEM_RESET                   |
+| INNODB_COLUMNS                        |
+| INNODB_DATAFILES                      |
+| INNODB_FIELDS                         |
+| INNODB_FOREIGN                        |
+| INNODB_FOREIGN_COLS                   |
+| INNODB_FT_BEING_DELETED               |
+| INNODB_FT_CONFIG                      |
+| INNODB_FT_DEFAULT_STOPWORD            |
+| INNODB_FT_DELETED                     |
+| INNODB_FT_INDEX_CACHE                 |
+| INNODB_FT_INDEX_TABLE                 |
+| INNODB_INDEXES                        |
+| INNODB_METRICS                        |
+| INNODB_SESSION_TEMP_TABLESPACES       |
+| INNODB_TABLES                         |
+| INNODB_TABLESPACES                    |
+| INNODB_TABLESPACES_BRIEF              |
+| INNODB_TABLESTATS                     |
+| INNODB_TEMP_TABLE_INFO                |
+| INNODB_TRX                            |
+| INNODB_VIRTUAL                        |
+| KEY_COLUMN_USAGE                      |
+| KEYWORDS                              |
+| OPTIMIZER_TRACE                       |
+| PARAMETERS                            |
+| PARTITIONS                            |
+| PLUGINS                               |
+| PROCESSLIST                           |
+| PROFILING                             |
+| REFERENTIAL_CONSTRAINTS               |
+| RESOURCE_GROUPS                       |
+| ROLE_COLUMN_GRANTS                    |
+| ROLE_ROUTINE_GRANTS                   |
+| ROLE_TABLE_GRANTS                     |
+| ROUTINES                              |
+| SCHEMA_PRIVILEGES                     |
+| SCHEMATA                              |
+| SCHEMATA_EXTENSIONS                   |
+| ST_GEOMETRY_COLUMNS                   |
+| ST_SPATIAL_REFERENCE_SYSTEMS          |
+| ST_UNITS_OF_MEASURE                   |
+| STATISTICS                            |
+| TABLE_CONSTRAINTS                     |
+| TABLE_CONSTRAINTS_EXTENSIONS          |
+| TABLE_PRIVILEGES                      |
+| TABLES                                |
+| TABLES_EXTENSIONS                     |
+| TABLESPACES                           |
+| TABLESPACES_EXTENSIONS                |
+| TRIGGERS                              |
+| USER_ATTRIBUTES                       |
+| USER_PRIVILEGES                       |
+| VIEW_ROUTINE_USAGE                    |
+| VIEW_TABLE_USAGE                      |
+| VIEWS                                 |
++---------------------------------------+
+79 rows in set (0.00 sec)
+mysql> select --> pripazi kad budes kucao ogromno je
+    -> *
+    -> from TABLES
+    -> ;
+355 rows in set (0.20 sec)
+mysql> show columns from tables;
++-----------------+--------------------------------------------------------------------+------+-----+---------+-------+
+| Field           | Type                                                               | Null | Key | Default | Extra |
++-----------------+--------------------------------------------------------------------+------+-----+---------+-------+
+| TABLE_CATALOG   | varchar(64)                                                        | YES  |     | NULL    |       |
+| TABLE_SCHEMA    | varchar(64)                                                        | YES  |     | NULL    |       |
+| TABLE_NAME      | varchar(64)                                                        | YES  |     | NULL    |       |
+| TABLE_TYPE      | enum('BASE TABLE','VIEW','SYSTEM VIEW')                            | NO   |     | NULL    |       |
+| ENGINE          | varchar(64)                                                        | YES  |     | NULL    |       |
+| VERSION         | int                                                                | YES  |     | NULL    |       |
+| ROW_FORMAT      | enum('Fixed','Dynamic','Compressed','Redundant','Compact','Paged') | YES  |     | NULL    |       |
+| TABLE_ROWS      | bigint unsigned                                                    | YES  |     | NULL    |       |
+| AVG_ROW_LENGTH  | bigint unsigned                                                    | YES  |     | NULL    |       |
+| DATA_LENGTH     | bigint unsigned                                                    | YES  |     | NULL    |       |
+| MAX_DATA_LENGTH | bigint unsigned                                                    | YES  |     | NULL    |       |
+| INDEX_LENGTH    | bigint unsigned                                                    | YES  |     | NULL    |       |
+| DATA_FREE       | bigint unsigned                                                    | YES  |     | NULL    |       |
+| AUTO_INCREMENT  | bigint unsigned                                                    | YES  |     | NULL    |       |
+| CREATE_TIME     | timestamp                                                          | NO   |     | NULL    |       |
+| UPDATE_TIME     | datetime                                                           | YES  |     | NULL    |       |
+| CHECK_TIME      | datetime                                                           | YES  |     | NULL    |       |
+| TABLE_COLLATION | varchar(64)                                                        | YES  |     | NULL    |       |
+| CHECKSUM        | bigint                                                             | YES  |     | NULL    |       |
+| CREATE_OPTIONS  | varchar(256)                                                       | YES  |     | NULL    |       |
+| TABLE_COMMENT   | text                                                               | YES  |     | NULL    |       |
++-----------------+--------------------------------------------------------------------+------+-----+---------+-------+
+21 rows in set (0.00 sec)
+
+mysql>

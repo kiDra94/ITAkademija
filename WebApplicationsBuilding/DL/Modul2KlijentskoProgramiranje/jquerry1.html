@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery - Upravljanje događajima</title>
+  <style>
+    .box {
+      background-color: red;
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+ <div class="box"></div>
+ <h1>OUT</h1>
+ <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+ <script type="text/javascript">
+  var div1=$("div").mouseenter(function(){
+   $("div").css("background-color","blue");
+   $("h1").text("IN");
+ })
+</script>
+</body>
+</html>

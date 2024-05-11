@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <style>
+        .zeleni {
+            color: green;
+        }
+        
+        .crveni {
+            color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Naslov</h1>
+    <h2>Naslov</h2>
+    <h3>Naslov</h3>
+    <h4>Naslov</h4>
+    <h5>Naslov</h5>
+    <h6>Naslov</h6>
+
+    <button onclick="clickFunction()">Change</button>
+
+
+
+    <script>
+        function clickFunction() {
+            //getElementByTagName vraća listu pa je potrebno dodati indeks
+            document.getElementsByTagName("h1")[0].className = "zeleni";
+            document.getElementsByTagName('h3')[0].className = "zeleni";
+            document.getElementsByTagName('h5')[0].className = "zeleni";
+
+            document.getElementsByTagName('h2')[0].className = "crveni";
+            document.getElementsByTagName('h4')[0].className = "crveni";
+            document.getElementsByTagName('h6')[0].className = "crveni";
+        }
+    </script>
+
+
+
+</html>

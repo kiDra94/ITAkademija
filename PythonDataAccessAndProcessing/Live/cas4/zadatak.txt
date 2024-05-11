@@ -1,0 +1,6 @@
+KNN -> Klasifikacija! (najjednostavniji algoritam masinskog ucenja)
+generisi 10 crvenih i 10 plavih tacaka
+generisi novu jednu tacku
+odredi rastojanje nove tacke od svih 20 tacaka
+odredi 3 najmanja rastojanja
+nadji vecinsku boju medju te 3 tacke

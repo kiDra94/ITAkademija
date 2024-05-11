@@ -1,0 +1,2 @@
+ImmutableMultiDict([('phrase', 'Marko i Ciga idu na pecanje '), ('letters', 'aeiou')])|127.0.0.1|Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0|{'a', 'e', 'u', 'i', 'o'}
+ImmutableMultiDict([('phrase', 'Marko i Ciga idu na pecanje sada'), ('letters', 'aeiou')])|127.0.0.1|Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0|{'o', 'i', 'e', 'a', 'u'}

@@ -1,0 +1,15 @@
+tesla_portrait
+
+width:230
+height: 285
+
+
+
+tesla_statue
+
+width: 425
+height: 315
+
+tesla_camera
+
+Same witdh and height as original image

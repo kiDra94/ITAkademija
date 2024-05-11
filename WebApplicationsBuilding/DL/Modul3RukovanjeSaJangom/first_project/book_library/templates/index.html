@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+</head>
+<body>
+    <h1>Books</h1>
+    <div>
+        <ul>
+            {% for book in books %} <!-- kontrolna logika korista jednu viticastu, u ovom slucaju petlja -->
+            <li>
+                <h2>Titel {{ book.title | upper}}</h2> <!-- | ovo je filter u ovom slucaj upper se koristi da se sve ispise sa velikim slovima -->
+                <p>Year {{ book.year }}</p> <!-- dvijen viticaste su promjenjive -->
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

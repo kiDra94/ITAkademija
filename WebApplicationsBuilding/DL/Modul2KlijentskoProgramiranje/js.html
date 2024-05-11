@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+<body>
+    <h1>JavaScript</h1>
+    <script src="logic.js"></script>
+    <script type="text/JavaScript">
+        var name  = "Mark";
+        name = "Mark1";
+        console.log(name);
+        let name1 = "John";
+        name1 = "John1"
+        console.log(name1)
+        const name2 = "Lisa";
+        <!--name2 = "Lisa1";-->
+        <!--Ovo iznad ne radi zato sto pormjenjiva const ne moze da se mijnja-->
+        console.log(name2)
+        function testFunction() {
+            console.log("testFunction");
+        }
+        testFunction();
+        function testFunction1(num1, num2) {
+            console.log(num1 + num2);
+        }
+
+        testFunction1(5, 6);
+        function testFunction2(num1, num2) {
+            return num1 + num2;
+        }
+        let sum = testFunction2(3, 5)
+        console.log(sum+5)
+
+        let a = 3;
+        function testFunction3(num1, num2) {
+            return num1 + num2 * a;
+        }
+        let sum1 = testFunction3(3, 5)
+        console.log(sum1+5)
+        alert(sum1); <!--iskaci pop up na stranici gdje pise sta je u zagradi-->
+    </script>
+</body>
+</html>

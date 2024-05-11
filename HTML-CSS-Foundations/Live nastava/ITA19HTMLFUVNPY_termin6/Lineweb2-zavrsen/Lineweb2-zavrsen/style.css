@@ -1,0 +1,197 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	color: #151515;
+	background: #CCC;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-transform: uppercase;
+}
+
+h1 { font-size: 34px;}
+h2 { font-size: 30px;}
+h3 { font-size: 28px;}
+h4 { font-size: 24px;}
+h5 { font-size: 20px;}
+h6 { font-size: 18px;}
+
+img {
+	vertical-align: bottom;
+}
+
+a:link,
+a:visited {
+	color: #C51417;
+	text-decoration: none;
+}
+a:hover {
+	color: #F30004;
+}
+a:active {
+	color: #473636;
+}
+
+#wrapper {
+	width: 980px;
+	background: #FFF;
+	margin: 0 auto;
+}
+#header {
+	background: #C51417;
+	border-bottom: 4px solid #999;
+	overflow: hidden;
+}
+#logo {
+	float: left;
+	border-right: 1px solid rgba(255,255,255,0.40);
+	margin: 0 10px 0 0;
+}
+#nav {
+	float: left;
+}
+#nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+#nav ul li {
+	float: left;
+}
+#nav ul li a {
+	display: block;
+	height: 20px;
+	line-height: 20px;
+	padding: 35px 15px 25px;
+}
+#nav ul li a:link,
+#nav ul li a:visited {
+	color: #FFF;
+	text-decoration: none;
+}
+#nav ul li a:hover {
+	background: rgba(0,0,0,0.25);
+}
+#nav ul li a:active {
+	background: rgba(0,0,0,0.5);
+}
+#hero {
+	
+}
+#main {
+	float: left;
+	width: 620px;
+	padding: 15px;
+}
+.introImg {
+	float: right;
+}
+.introText {
+	padding: 0 300px 0 0;
+	text-align: justify;
+}
+
+#news {
+	overflow: hidden;
+}
+#news .article {
+	float: left;
+	width: 300px;
+	margin: 0 20px 0 0;
+}
+#news .article:nth-of-type(2n) {
+	margin-right: 0;
+}
+
+#news .article h3 {
+	color: #646464;
+	font-size: 24px;
+	margin: 5px 0;
+}
+#news .article img {
+	float: left;
+	margin: 12px 8px 3px 0;
+}
+
+#sidebar {
+	float: right;
+	width: 300px;
+	padding: 15px;
+	background: #EEE;
+}
+
+#main h1, 
+#main h2{
+	border-bottom: 4px solid #C51417;
+}
+#sidebar h1, 
+#sidebar h2{
+	border-bottom: 4px solid #999;
+}
+
+#tags {
+	margin: 0 0 30px;
+}
+#tags ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+#tags ul li {
+	display: inline-block;
+}
+#tags ul li a {
+	display: block;
+	padding: 4px;
+	margin: 0 2px 5px 0;;
+}
+#tags ul li a:link,
+#tags ul li a:visited {
+	color: #FFF;
+	background: #707070;
+}
+#tags ul li a:hover {
+	background: #C51417;
+}
+#tags ul li a:active {
+	background: #424242;
+}
+
+#footer {
+	clear: both;
+	font-size: 12px;
+	padding: 10px 0;
+	text-align: center;
+	border-top: 5px solid #CCC;
+}
+#footer p {
+	margin: 0;
+}
+
+
+.imgLeft {
+	float: left;
+	margin: 0 20px 10px 0;
+}
+.imgLeft p {
+	margin: 0;
+	font-size: 12px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

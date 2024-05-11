@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Forms</title>
+</head>
+
+<body>
+    <form action="script.php" method="post" enctype="multipart/form-data" name="demo_form" id="demo_form">
+        <label for="name">Name:</label>
+        <input type="text" id="name"><br>
+        <input name="country" type="radio" id="Serbia" value="Serbia" checked="checked">
+        <label for="Serbia">Serbia</label>
+        <br>
+        <input name="country" type="radio" id="Romania" value="Romania">
+        <label for="Romania">Romania</label>
+        <br>
+        <input name="country" type="radio" id="Ukraine" value="Ukraine">
+        <label for="Ukraine">Ukraine</label><br>
+        <input type="checkbox" name="question" value="Like" id="question">
+        <label for="question">I like HTML</label><br>
+        <input type="submit" value="Submit"><br>
+        <input type="number" name="quantity" min="1" max="5"><br>
+        <input type="color" name="favcolor"><br>
+        <input type="range" name="points" min="0" max="10"><br>
+        <textarea name="description" id="description">Lorem ipsum dolor sit amet.</textarea><br>
+        <button type="button">
+            <img src="images/button.gif" alt="button" width="10" height="10">
+            Finish</button><br>
+        <select name="country" id="country">
+            <option value="Serbia">Serbia</option>
+            <option value="Romania" selected="selected">Romania</option>
+            <option value="Ukraine">Ukraine</option>
+        </select><br>
+        <select>
+            <optgroup label="Europe">
+                <option value="romania">Romania</option>
+                <option value="serbia">Serbia</option>
+                <option value="ukraine">Ukraine</option>
+            </optgroup>
+            <optgroup label="Asia">
+                <option value="chine">China</option>
+                <option value="india">India</option>
+            </optgroup>
+        </select>
+        <fieldset>
+            <legend>Personal info</legend>
+            <label for="name">First name:</label><br>
+            <input type="text" name="name" id="name"><br>
+            <label for="surname">Last name:</label><br>
+            <input type="text" name="surname" id="surname"><br>
+        </fieldset>
+        <fieldset>
+            <legend>Contact</legend>
+            <label for="email">Email:</label><br>
+            <input type="text" name="email" id="email"><br>
+            <label for="phone">Phone:</label><br>
+            <input type="number" name="phone" id="phone">
+        </fieldset>
+    </form>
+</body>
+
+</html>

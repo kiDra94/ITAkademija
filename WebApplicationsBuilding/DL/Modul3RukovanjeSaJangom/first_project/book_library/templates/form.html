@@ -1,0 +1,5 @@
+<form action="{% url 'book_added' %}" method="POST"> <!-- url ugradjeni tab jedini obavezni argument tag koja odgovara pogledu-->
+    {% csrf_token %} <!-- token koristi se za sigurnost aplikacije i potreban je prilikom slanja podataka na server radi validacije izvora zahteva -->
+    {{ form }} <!-- mesto na koje ćemo proslediti objekat forme. -->
+    <p><input type="submit" value="Send the form!"></p>
+</form

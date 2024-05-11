@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style type="text/css">
+        .pstyle {
+            background-color: green;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>DOM</h2>
+    <p id="par">Paragraph value</p>
+    <button onclick="changeParagraph()">Click</button>
+    <script type="text/javascript">
+        function changeParagraph(){
+            console.log(document.getElementById("par").innerHTML);
+            document.getElementById("par").innerHTML = "New paragaph falue";
+            document.getElementById("par").className = "pstyle";
+        }
+        
+    </script>
+</body>
+</html>

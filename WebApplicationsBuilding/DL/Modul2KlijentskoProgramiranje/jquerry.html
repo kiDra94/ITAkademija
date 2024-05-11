@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery - Selektovanje elemenata prema tipu elementa</title>
+</head>
+<body>
+    <p>Text 1</p>
+    <p>Text 2</p>
+    <p>Text 3</p>
+ 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $("p").text("New text!");
+    </script>
+
+    <div id="text">Text</div>
+    <script type="text/javascript">
+        $("#text").text("New text!");
+    </script>
+
+    <p class="Class1">Text 1</p>
+    <p class="Class1">Text 2</p>
+    <p>Text 3</p>
+    <script type="text/javascript">
+    $(".Class1").text("New text!");
+    </script>
+
+    <p>Text</p>
+    <script>
+    $("p").click(function(){
+        alert("Click");
+    });
+    </script>
+</body>
+</html> 

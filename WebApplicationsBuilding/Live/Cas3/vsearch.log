@@ -1,0 +1,5 @@
+ImmutableMultiDict([('phrase', 'adsafadfdafa'), ('letters', 'aeiou')])|127.0.0.1|Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36|{'a'}
+ImmutableMultiDict([('phrase', 'super je vrijeme'), ('letters', 'aeiou')])|127.0.0.1|Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36|{'i', 'u', 'e'}
+ImmutableMultiDict([('phrase', 'zasto ne radis'), ('letters', 'aeiou')])|127.0.0.1|Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36|{'o', 'a', 'e', 'i'}
+ImmutableMultiDict([('phrase', 'super je vrijeme'), ('letters', 'aeiou')])|127.0.0.1|Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36|{'e', 'i', 'u'}
+ImmutableMultiDict([('phrase', 'bibac je najjaci'), ('letters', 'dfasdf')])|127.0.0.1|Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36|{'a'}

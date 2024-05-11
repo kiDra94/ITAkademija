@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> AJAX</title>
+</head>
+
+<body>
+    <label>Name:</label>
+    <input type="text" id="name">
+    <button onclick="loadDoc()">Get</button>
+    <p id="text"></p>
+    <script type="text/javascript">
+        function loadDoc() {
+            var name = document.getElementById("name").value;
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                console.log(this.responseText);
+
+            }
+            xhttp.open("GET", "http://127.0.0.1:8080/?name=" + name, true);
+            xhttp.send();
+        }
+    </script>
+</body>
+
+</html>
