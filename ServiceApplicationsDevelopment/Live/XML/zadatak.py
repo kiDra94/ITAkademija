@@ -1,14 +1,21 @@
 N = 10
 
 mat = [[1 if i == 0 or i == N-1 or j == 0 or j == N-1 else 0 for j in range(N)] for i in range(N)]
+def ispis(mat):
+    for r in mat:
+        print(r)
 
-for r in mat:
-    print(r)
+ispis(mat)
+print("---------------------------")
 
+mat1 = []
 for i in range(N):
+    red = []
     for j in range(N):
         if(i == 0 or i == N-1 or j == 0 or j == N-1):
-            print("1", end="")
+            red.append(1)
         else:
-            print("0", end="")
-    print("")
+            red.append(0)
+    mat1.append(red)
+
+ispis(mat1)
