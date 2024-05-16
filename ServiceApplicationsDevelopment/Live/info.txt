@@ -1,0 +1,4 @@
+cas 1:
+movies.xml (svi) + parse.py (svi) + zadatak
+cas 2:
+folder cas2 (sql triggers) + country_data.xml (sve) + DFS.py (sve) + toDict.py + toJson.py
