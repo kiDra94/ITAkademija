@@ -1,17 +1,12 @@
-N = 10
-
+N = 5
 def obrada(N):
     return [[1 if i == 0 or i == N-1 or j == 0 or j == N-1 else 0 for j in range(N)] for i in range(N)]
-
 def ispis(mat):
     for r in mat:
         print(r)
-
-ispis(obrada(N))
-
-print("-----------------------------------")
-
-mat1 = []
+#ispis(obrada(N))
+# print("-----------------------------------")
+'''mat1 = []
 for i in range(N):
     red = []
     for j in range(N):
@@ -20,5 +15,6 @@ for i in range(N):
         else:
             red.append(0)
     mat1.append(red)
-
-ispis(mat1)
+ispis(mat1)'''
+if __name__ == "__main__":
+    ispis(obrada(N))
