@@ -1,0 +1,244 @@
+Šta su web servisi?
+
+Web servis je aplikacija smeštena na nekom serveru, koja je pored osnovne namene dizajnirana da podrži interakciju izmedju dve mašine preko mreže i omogući razmenu informacija izmedju njih. Smatra se da je svaki servis i web servis ako je:
+
+    Dostupan preko interneta ili (interne mreže)
+    Koristi standardizovan sistem poruka
+    Prepoznatiljv je od strane mehanizma za pretragu
+    Nije vezan za operativni sistem ili programski jezik
+
+	Saradnja sa GUI aplikacijom
+
+Web servisi u saradnji sa GUI aplikacijom su nešto izmedju web i desktop aplikacije. Web servis na serveru daje funkcionalnost i podatke a desktop aplikacija samo daje prilagodljivi grafički interfejs koji popunjava sa dobijenim podacima od servisa. Web servis u saradnji sa GUI aplikacijom je fleksibilniji od web aplikacije jer korisnik može da prilagodi izgled aplikacije na klijentu dok korisnik web aplikacije mora da koristi web browser i nema uticaja na to kako će aplikacija izgledati na ekranu.
+Prednosti u odnosu na web aplikaciju:
+
+    Štedljiviji su po pitanju opterećenja mreže i resursa servera jer pri komunikaciji šalju samo odgovor dok web aplikacije pored odgovora šalju i HTML sa formom i opisom kako ogovor treba da bude prikazan. Web servisi su idealni za “male” uredjaje koji nisu PC tj. mobilne Pocet PC… jer je na takvom uredjaju instalirana samo front-end aplikacija a teži deo se odradjuje na serveru.
+    Lakši su za razvoj, testiranje i održavanje. Kod Web aplikacije pored neophodne funkcionalnosti je potrebno istestirati i dizajn na svim browserima i platformama dok kod web servisa autor brine samo o funkciji dok o prikazu brine klijentska aplikacija.
+
+	Kod servisa se komunikacija odvija izmedju klijenta i servera tako što klijent pošalje zahtev serveru koji onda server taj zahtev primi i obradi ga pa u odnosu na njega formira odgovor koji zatim pošalje nazad klijentu. Klijent-server stil arhitekture odvaja problematiku dve strane komunikacijskog kanala, što znači da klijentsku stranu uopšte ne zanima način čuvanja informacija na serveru jer uvijek postoji uniforman način pristupa tim resursima. S druge strane, server je nezavisan od klijenta i ne zanima ga kako je implementirano korisnički interfejs niti u kojem je stanju pojedini klijent, čime je serverska strana znatno pojednostavljena. Ovime je postignuta njihov nezavisnost i lakše razdvojeno razvijanje obe strane, odnosno moguće je npr. unaprediti serversku stranu ili potpuno izmeniti njegovu logiku, a da klijent to uopšte ne primieti dok god je način pristupa resursima isti.
+	
+Šta je API?
+
+Da bi se ostvarila komnikacija izmedju dva sistema potrebno je da imaju “tačku” za kontakt, tzv. interfejs. Interfejs je posrednik (veza) pri komunikaciji izmedju dva odvojena sistema koji zajedno rade i može biti:
+
+    Hardverski interfejs (npr. volan, gas i menjač su “tačke pristupa vozilu” i predstavlju posrednika između automobila i osobe koja upravlja sa njim)
+    Programski interfejs tzv. “API” koje predstavlja “tačke pristupa” pri komunikaciju izmedju dva programa
+
+Rad sa servisima podrazumeva da se resursima pristupa na udaljenom serveru (pristup je putem interenet mreže), ovakva mrežna komunikacija sa sobom donosi problem pristupa i prenosa složenih struktura podataka kao i same organizacije resursa na serveru. Programeri su tokom vremena kreirali komunikaciju izmedju dva programa na razne načine tj. pravili različite tipove API-ja ali su u jednom trenutku standardizovali način komunikacije tj. napravili su skup pravila koja mrežne aplikacije trebaju pratiti pri medjusobnoj komunikaciji (npr. jedan od takvih standardizovanih api-ja je “REST API”).
+Ono na šta moramo obratiti pažnju je da kada se jednom definiše API i pusti u “promet”, u slučaju da je nakon nekog vremena potrebno napraviti izmene, nije pametno menjati do sada postavljene “end point-e” jer bi bilo u najmanju ruku neljubazno prisiljavati potrošače API-ja da menjaju već izradjene programe da bi se prilagodili na promenu. Kada se napravi promena uvek treba težiti da nastavite s podrškom za postojeća svojstva (end point-e), a da za promene dodate nova svojstva umesto menjanja postojećih. 
+
+Kako API-ji rade i zašto su nam potrebni?
+
+API predstavlja set definicija i protokola. Potreban nam je za razvoj aplikacija i integraciju, jer služi za razmenu podataka između dva različita softvera, kao izvor/pošiljalac informacija (server) i kao korisnik.
+
+Programi koriste API-je da komuniciraju, pribave informacije ili pokrenu funkciju. API-ji dozvoljavaju korisnicima da rade sa sistemom da bi vratili željeni rezultat.
+
+Da pojednostavimo, API se ponaša kao posrednik između korisnika (klijenta) i resursa (servera).
+
+Neki od razloga za integraciju API-ja su:
+
+    racionalizacija deljenja resursa i informacija
+    kontrolisanje ko kome ima pristup uz pomoć autentifikacije i definisanja prava
+    bezbednost i kontrola
+    nema potrebe za razumevanjem specifičnosti softvera
+    dosledna komunikacija između servisa, čak iako koriste različite tehnologije.
+
+
+RESTful web servisi
+
+Ovi servisi su jednostavnije integrisani sa HTTP-om od SOAP servisa, ne zahtevaju XML poruke ili WSDL opise servisa. Danas se RESTfull izdvojio kao dominantan mrežni servis, potisnuo je SOAP i WSDL jer je značajno jednostavniji za korišćenje.
+
+Karakteristike REST API-ja
+
+REST je akronim za “Representational State Trasfer” i odnosi se na način/principe kreiranja API-ja. Podaci se najčešće prebacuju u JSON formatu mada je dostupan i XML i YAML format. API se zasniva na REST arhitekturi te je veoma fleksibilan i jednostavan za razumevanje.
+Kod ovog tipa API-ja, resursi (npr. statičke strane, fajlovi, podaci iz baze…) imaju sopstveni URL ili URI koji ih identifikuju, a pristup do resursa je definisan tako da svaki poziv čini jednu akciju (kreira, čita, menja ili briše podatke).
+Isti URL se koristi za sve operacije ali se menja HTTP metod koji definiše vrstu operacije. REST koristi “CRUD like” HTTP metode kao što su: GET, POST, PUT, DELETE, OPTIONS. 
+
+RESTful servisi imaju sledeće osobine i karakterisitike:
+
+    Mogućnost keširanja (Cacheable)
+    Uniformni interfejs (Uniform interface URI)
+    Izričito korišćenje HTTP metoda
+    Transfer XML i/ili JSON
+    Nepostojanje stanja (“stateless”), što znači da server ne pamti nikakve podatke o klijentu, odnosno da klijent sa svakim zahtevom mora slati sve potrebne informacije za razumevanje i obradu tog zahteva, i ne oslanjati se na to da će ga server “prepoznati” (odnosno iskoristiti informacije iz prethodnih zahteva istog klijenta). 
+	
+Primena RESTfull servisa
+
+RESTfull servisi se koriste:
+
+    kod ograničenog propusnog opsega i resursa (povratna informacija može biti u bilo kom obliku)
+    kod operacija koje ne koriste stanja (ukoliko neka operacija treba da bude nastavljena onda REST nije pravi pristup i SOAP verovatno predstavlja bolje rešenje)
+    kod situacija gde je moguće keširanje (ukoliko informacija može biti keširana zbog operacija koje ne koriste stanja onda je ovaj pristup odličan)
+
+Prednosti RESTfull servisa
+
+Odlike RESTfull servisa su:
+
+    jednostavnost
+    Klijenti koji pozivaju REST servise ne moraju da formatiraju zahteve po SOAP specifikaciji i ne moraju da parsiraju SOAP odgovor kako bi iz njega izvukli rezultat.
+    fleksibilnost formata vraćenih podataka
+    Format u kome se podaci vraćaju nije unapred definisan i zavisi od samog servisa. Klijenti mogu da zatraže podatke u formatu koji im najviše odgovara, za razliku od SOAP formata koji iako je standardizovan mora da se parsira. Pa tako JavaScript može dobiti podatke u JSON formatu koji lako može da pročita, a RSS čitač u RSS-XML formatu koji može da prikaže.
+    korišćenje postojeće mrežne infrastrukture
+    brzo savladavanje tehnike
+
+Kako REST API-ji rade?
+
+Podaci (kao što su slike, video snimci i tekst) sadrže resurse u REST-u. Klijent posećuje određeni URL i šalje zahtev serveru da dobije odgovor.
+Koncept iza REST API-ja
+
+Zahtev (URL kojem pristupate) sadrži četiri komponente:
+
+    endpoint koji je zapravo URL sa strukturom root-endpoint/?
+    metod sa jednim od pet mogućih tipova (GET, POST, PUT, PATCH, DELETE)
+    header-i, koji poslužuju različite funkcije, uključujući autentikaciju i obezbeđujući informacije o sadržaju body sekcije (možete koristiti -H ili –header opciju da pošaljete HTTP header-e)
+    podaci (ili body) koje šaljete ka serveru preko opcije -d ili –data, sa POST, PUT, PATCH, ili DELETE zahtevima.
+
+HTTP zahtevi vam omogućavaju da radite sa bazama podataka:
+
+    POS zahtev za kreiranje zapisa (record)
+    GET zahtev da pročitate ili dobijete resurse (dokument ili sliku, kao i kolekciju drugih resursa) od servera
+    PUT i PATCH zahtevi da ažurirate zapise
+    DELETE zahtevi da obrišete resurse sa servera
+
+Ove operacije se odnose na četiri moguće akcije, poznatije kao CRUD: Create, Read, Update i Delete.
+
+Server šalje podatke klijentu u jednom od sledećih formata:
+
+    HTML
+    JSON (koji je najčešći zahvaljujući njegovoj nezavisnosti od nekog konkretnog programskog jezika i pristupačnosti od strane ljudi ili mašina)
+    XLT
+    PHP
+    Python
+    plain text.
+
+Zašto da koristite REST API?
+
+Zašto biste dali prednost REST-u u odnosu na druge API-je, kao na primer SOAP? Mnogi su razlozi za to, a neki od njih su skalabilnost, fleksibilnost, prenosivost i nezavisnost.
+Ne zavisi od strukture projekta
+
+Odvojeni rad klijenta i servera znači da programeri nisu vezani ni za jedan deo projekta. Zahvaljujući adaptivnim REST API-jima, oni mogu da razviju svaki aspekt bez uticaja na drugi.
+Prenosivost i prilagodljivost
+
+REST API-ji rade samo kada su podaci iz jednog od zahteva uspešno isporučeni. Omogućavaju vam da migrirate sa jednog servera na drugi i ažurirate bazu podataka u bilo kom trenutku.
+Mogućnost da se projekat proširi u budućnosti
+
+S obzirom da klijent i server deluju odvojeno, developeri mogu lako i brzo da prošire svoj projekat.
+Karakteristike RESTful arhitekture
+
+Programeri moraju da uzmu u obzir krutu strukturu nekih API-ja, kao što su SOAP ili XML-RPC. Ali REST API-ji su različiti. Oni podržavaju širok spektar tipova podataka i mogu biti napisani praktično na bilo kom programskom jeziku.
+
+Šest REST arhitektonskih ograničenja su principi za projektovanje rešenja:
+Jedinstveni interfejs (dosledan korisnički interfejs)
+
+Ovaj koncept nalaže da svi API upiti za isti resurs, bez obzira na njihovo poreklo, treba da budu identični, odnosno na jednom specifičnom jeziku. Jedna uniformna identifikacija resursa (URI) je povezana sa istim podacima, kao što su ime korisnika ili adresa e-pošte.
+
+Drugi princip uniformnog interfejsa kaže da poruke treba da budu samoopisne. Oni moraju biti razumljivi da bi server mogao da odredi kako da se nosi sa tim (na primer, tip zahteva, tipovi mime-a itd.).
+Klijent-server odvajanje
+
+REST arhitektonski stil ima poseban pristup implementaciji klijenta i servera. Stvar je u tome što se mogu raditi nezavisno i ne moraju da znaju za druge.
+
+Na primer, klijent ima samo jedinstvenu identifikaciju resursa (URI) zahtevanog resursa i ne može da komunicira sa serverskim programom na bilo koji drugi način. S druge strane, server ne bi trebalo da utiče na klijentski softver. Dakle, šalje osnovne podatke preko HTTP-a.
+
+Šta ovo znači?
+
+    Možete da izmenite klijentski kod u bilo kom trenutku bez uticaja na rad servera.
+    Možete zadržati klijentske i serverske programe i modularne i nezavisne sve dok svaka strana zna koji format poruke da dostavi drugoj.
+
+Šta postižemo odvajanjem problema korisničkog interfejsa od ograničenja skladištenja podataka? Poboljšavamo fleksibilnost interfejsa na različitim platformama i povećavamo skalabilnost.
+
+Štaviše, svaka komponenta ima koristi od razdvajanja jer može da se razvija nezavisno. REST interfejs pomaže različitim klijentima u:
+
+    pristupa istim REST krajnjim tačkama
+    izvršavanje identičnih aktivnosti
+    dobijajući slične odgovore.
+
+Stateless komunikacija između klijenta i servera
+
+Sistemi zasnovani na REST-u su bez stanja (stateless), što znači da stanje klijenta ostaje nepoznato serveru i obrnuto. Ovo ograničenje omogućava serveru i klijentu da razumeju bilo koju poslatu poruku, čak i ako nisu videli prethodne.
+
+Da biste primenili ovo, morate da koristite resurse, a ne komande. Njihova svrha je da opišu bilo koji objekat koji želite da zadržite ili da prenesete drugim uslugama.
+
+Možete da kontrolišete, menjate i ponovo koristite komponente bez uticaja na sistem u celini, tako da prednosti ovog ograničenja uključuju postizanje:
+
+    stabilnost
+    brzina
+    skalabilnost RESTful aplikacija.
+
+Imajte na umu da svaki zahtev treba da sadrži sve informacije potrebne za njegovo dovršavanje. Klijentske aplikacije moraju da sačuvaju stanje sesije jer serverske aplikacije ne bi trebalo da čuvaju nikakve podatke povezane sa zahtevom klijenta.
+Keširanje podataka
+
+REST zahteva keširanje resursa na strani klijenta ili servera gde god je to moguće. Keširanje podataka i odgovora je ključno u današnjim aplikacijama jer rezultira boljim performansama na strani klijenta.
+
+Kako to utiče na korisnika? Dobro vođeno keširanje može smanjiti ili eliminisati neke interakcije na relaciji klijent-server.
+
+Takođe daje serveru više opcija za skalabilnost zbog manjeg opterećenja servera. Keširanje povećava brzinu učitavanja stranice i omogućava vam pristup prethodno pregledanom sadržaju bez internet veze.
+
+Slojevita sistemska arhitektura
+
+RESTful slojevita struktura dizajna je sledeće ograničenje o kome se raspravlja. Ovaj princip uključuje grupisanje različitih slojeva sa određenim funkcijama.
+
+REST API slojevi imaju svoje odgovornosti i dolaze u hijerarhijskom redosledu. Na primer, jedan sloj može biti odgovoran za skladištenje podataka na serveru, drugi za primenu API-ja na drugom serveru, a treći za autentifikaciju zahteva na drugom serveru.
+
+Ovi slojevi deluju kao posrednici i sprečavaju direktnu interakciju između klijentskih i serverskih aplikacija. Kao rezultat toga, klijent ne zna kom serveru ili komponenti se obraća.
+
+Kada svaki sloj obavlja svoju funkciju pre nego što prenese podatke na sledeći, to poboljšava ukupnu sigurnost i fleksibilnost API-ja jer dodavanje, izmena ili uklanjanje API-ja ne utiče na druge komponente interfejsa.
+Kodiranje na zahtev (on-demand)
+
+Najčešći scenario korišćenja REST API-ja je isporuka statičkih reprezentacija resursa u XML-u ili JSON-u.
+
+Međutim, ovaj model arhitekture omogućava korisnicima da preuzimaju i pokreću kod u obliku Java apleta ili skripti (kao što je JavaScript). Na primer, klijenti mogu da preuzmu kod za prikazivanje za UI vidžete pozivanjem vašeg API-ja.
+Izazovi koje možete očekivati prilikom korišćenja REST API-ja
+
+Kada ste razumeli REST API dizajn i ograničenja arhitekture, trebalo bi da znate i koje probleme možete očekivati dok koristite ovaj stil:
+Sporazum o REST endpoint-ima
+
+API-ji treba da ostanu dosledni bez obzira na konstrukciju URL-a. Ali sa porastom mogućih kombinacija metoda, teže je održati uniformnost u velikim kodnim bazama.
+Verzioniranje kao karakteristika REST API-ja
+
+API-ji zahtevaju redovno ažuriranje ili verzioniranje da bi se sprečili problemi sa kompatibilnošću. Međutim, stari endpoint-i ostaju operativni, što povećava opterećenje.
+Veliki broj metoda autentifikacije
+
+Možete odrediti koji su resursi dostupni za koje tipove korisnika. Na primer, možete da odredite koje usluge treće strane mogu da pristupe adresama e-pošte klijenata ili drugim osetljivim informacijama i šta mogu da urade sa ovim promenljivima.
+
+Ipak, 20 različitih metoda autorizacije koje postoje mogu otežati vaš početni API poziv. Zbog toga programeri ne nastavljaju sa projektom zbog početnih poteškoća.
+Bezbednosni propusti REST API-ja
+
+Iako RESTful API-ji imaju slojevitu strukturu, i dalje mogu postojati neki bezbednosni problemi. Na primer, ako aplikacija nije dovoljno bezbedna zbog nedostatka enkripcije, može da otkrije osetljive podatke, ili haker može da pošalje hiljade API zahteva u sekundi, uzrokujući DDoS napad ili druge zloupotrebe API usluge koje mogu da sruše vaš server.
+Prekomerno prikupljanje podataka i zahteva
+
+Server može da vrati zahtev sa svim podacima, koji mogu biti nepotrebni, ili ćete možda morati da pokrenete više upita da biste dobili potrebne informacije.
+
+What is JSON?
+JSON stands for JavaScript Object Notation
+JSON is a lightweight data-interchange format
+JSON is plain text written in JavaScript object notation
+JSON is used to send data between computers
+JSON is language independent *
+*
+The JSON syntax is derived from JavaScript object notation, but the JSON format is text only.
+
+Code for reading and generating JSON exists in many programming languages.
+
+Why Use JSON?
+The JSON format is syntactically similar to the code for creating JavaScript objects. Because of this, a JavaScript program can easily convert JSON data into JavaScript objects.
+
+Since the format is text only, JSON data can easily be sent between computers, and used by any programming language.
+
+JavaScript has a built in function for converting JSON strings into JavaScript objects:
+
+JSON.parse()
+
+JavaScript also has a built in function for converting an object into a JSON string:
+
+JSON.stringify()
+
+You can receive pure text from a server and use it as a JavaScript object.
+
+You can send a JavaScript object to a server in pure text format.
+
+You can work with data as JavaScript objects, with no complicated parsing and translations.
+
+Storing Data
+When storing data, the data has to be a certain format, and regardless of where you choose to store it, text is always one of the legal formats.
+
+JSON makes it possible to store JavaScript objects as text.
