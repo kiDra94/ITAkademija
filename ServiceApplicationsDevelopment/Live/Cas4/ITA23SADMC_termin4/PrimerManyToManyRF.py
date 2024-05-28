@@ -3,7 +3,7 @@ from sqlalchemy import text, String, ForeignKey, Table, Column, Integer, Foreign
 from sqlalchemy.ext import declarative
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, declarative_base, relationship, Session
 
-engine = db.create_engine('mysql+pymysql://root:@localhost:3306/off4')
+engine = db.create_engine('mysql+pymysql://root:banjalukA1%@localhost:3306/off')
 
 
 def TableArgsMeta(table_args):

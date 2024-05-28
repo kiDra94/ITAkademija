@@ -60,3 +60,9 @@ with Session(engine) as session:
  
     for book in author.books:
         print(book.title)
+
+    stmt1 = select(Book).where(Book.title == 'sql')
+    book = session.scalar(stmt1)
+
+    for author in book.authors:
+        print(author.first_name)

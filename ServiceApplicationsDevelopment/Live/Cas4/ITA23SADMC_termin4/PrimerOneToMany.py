@@ -3,7 +3,7 @@ import sqlalchemy as db
 from sqlalchemy import text, String, ForeignKey, Table, Column, Integer, ForeignKeyConstraint, select, Float
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, declarative_base, relationship, Session
 
-engine = db.create_engine('mysql+pymysql://root:@localhost:3306/off2')
+engine = db.create_engine('mysql+pymysql://root:banjalukA1%@localhost:3306/off')
 
 Base = declarative_base()
 
