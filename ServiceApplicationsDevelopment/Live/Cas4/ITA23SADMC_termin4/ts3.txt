@@ -1,0 +1,43 @@
+interface IGreeting
+{
+	greeting: ()=>void;
+}
+interface IFight
+{
+	fight: ()=>void;
+}
+
+
+class Person
+{
+	public firstName : string;
+	public lastName : string;
+
+	constructor(firstName:string, lastName:string)
+	{
+		this.firstName = firstName;
+		this.lastName = lastName;
+	}
+}
+
+class Student extends Person implements IGreeting,IFight
+{
+	public indexNo : string;
+
+	greeting()
+	{
+		console.log("Hello " + this.firstName + " " + this.lastName + " " + this.indexNo);
+	}
+	fight()
+	{
+		console.log("Hello fight " + this.firstName + " " + this.lastName + " " + this.indexNo);
+	}
+}
+
+let st = new Student("Peter","Jackson");
+st.indexNo = "123/456";
+st.greeting();
+st.fight();
+st.indexNo = "123/456789";
+st.greeting();
+st.fight();

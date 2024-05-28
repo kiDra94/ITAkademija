@@ -1,0 +1,39 @@
+// class Person
+class Person {
+   public name: string = ''
+   public role: string = '' 
+   
+   public getName(){
+       return `User name: ${this.name} Role: ${this.role}`
+    }
+    constructor(name: string){
+    	this.name = name
+    }
+}
+
+class basketballPlayer extends Person {
+     public setRole(name: string){
+       //this.name = name
+       this.role = 'BasketBall Player'
+    }
+    /*public getName(){
+       return `User name: ${this.name} Role: ${this.role}`
+    }*/
+}
+
+class golfPlayer extends Person {
+    public setRole(name: string){
+       //this.name = name
+       this.role = 'Golf Player'
+    }
+    /*public getName(){
+       return `User name: ${this.name} Role: ${this.role}`
+    }*/
+}
+
+const person1 = new basketballPlayer('Kevin Odongo')
+const person2 = new golfPlayer('simo perin')
+person1.setRole('BasketBall Player')
+person2.setRole('Golf Player')
+console.log(person1.getName())
+console.log(person2.getName())
